@@ -1,14 +1,5 @@
 import React from 'react';
 
-const fakeResponse = [
-  {
-   "quote": "Shoplifting is a victimless crime, like punching someone in the dark.",
-   "character": "Nelson Muntz",
-   "image" : "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FNelsonMuntz.png?1497567511185",
-   "characterDirection" : "Left"
-  }
-];
-
 class DisplayQuote extends React.Component {
   constructor(props) {
     super(props);
@@ -21,14 +12,18 @@ class DisplayQuote extends React.Component {
   }
 
   handleClick() {
-    const response = fakeResponse;
-    const responseQuote = response[0];
-    this.setState({
-      image: responseQuote.image,
-      quote: responseQuote.quote,
-      character: responseQuote.character
-    })
+    fetch("https://thesimpsonsquoteapi.glitch.me/quotes")
+      .then(response => response.json())
+      .then(data => {
+        const responseData = data[0];
+        this.setState({
+          image: responseData.image,
+          quote: responseData.quote,
+          character: responseData.character
+        })
+      })
   }
+
   render () {
     return (
       <div>
