@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 class DisplayQuote extends React.Component {
   constructor(props) {
@@ -26,11 +27,11 @@ class DisplayQuote extends React.Component {
 
   render () {
     return (
-      <div>
-        <img src={this.state.image}/>
-        <h2>{this.state.quote}</h2>
-        <p>{this.state.character}</p>
-        <button onClick={this.handleClick}>Generate a Simpson's character!</button>
+      <div className="simpsonfamily">
+        <img className="photo" src={this.state.image}/>
+        <h2 className="quote">{this.state.quote}</h2>
+        <p className="character">{this.state.character}</p>
+        <Button className ="button" outline color="danger" size="lg" onClick={this.handleClick}>Generate a Simpson's character!</Button>
       </div>
     );
   }
