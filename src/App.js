@@ -5,7 +5,7 @@ import DisplayQuote from './DisplayQuote.js';
 function App() {
   return (
     <div className="App">
-      <h1>Click the button to get a Simpson experince!</h1>
+      <h1>Simpson's experince!</h1>
       <DisplayQuote />
     </div>
   );

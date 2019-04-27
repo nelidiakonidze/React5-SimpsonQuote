@@ -2,8 +2,14 @@ import React from 'react';
 
 class DisplayQuote extends React.Component {
   render () {
-    return <p>Hello, World!</p>
-
+    return (
+      <div>
+        <img/>
+        <h2>Quote</h2>
+        <p>Character's name</p>
+        <button>Generate a Simpson's character!</button>
+      </div>
+    );
   }
 }
 
